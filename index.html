@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akaal Global</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #b11212, #6f0a0a);
+    color:#fff;
+    text-align:center;
+}
+
+/* TOP SLIDER */
+.marquee{
+    background:#000;
+    padding:8px 0;
+    font-size:14px;
+}
+.marquee span{
+    animation: scroll 10s linear infinite;
+    display:inline-block;
+}
+@keyframes scroll{
+    from{transform:translateX(100%);}
+    to{transform:translateX(-100%);}
+}
+
+/* BUTTON */
+.btn{
+    padding:12px 22px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+    background:#fff;
+    color:#000;
+}
+
+/* GLOW CARD */
+.card{
+    margin:25px auto;
+    padding:25px;
+    width:85%;
+    max-width:350px;
+    background:#000;
+    border-radius:18px;
+    box-shadow:0 0 18px rgba(177,18,18,0.55);
+}
+
+/* RED BUTTON */
+.red-btn{
+    background:#b11212;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:30px;
+    border:none;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+img{
+    max-width:100%;
+    border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP SLIDER -->
+<div class="marquee">
+    <span>✨ Follow us on Instagram — @akaalglobal ✨</span>
+</div>
+
+<br>
+
+<h2>Discover More Collection</h2>
+<p>Explore Akaalglobal's premium products and exclusive offers.</p>
+
+<button class="btn" onclick="location.href='products.html'">Shop Now</button>
+
+<!-- PAYMENT SECTION -->
+<div class="card">
+    <h3>✨ Payment Receive ✨</h3>
+    <p>Scan QR or pay directly using any UPI app</p>
+
+    <!-- QR IMAGE -->
+    <img src="images/upi-qr.png" alt="UPI QR">
+
+    <br><br>
+
+    <!-- UPI LINK -->
+    <button class="red-btn" onclick="payUPI()">Pay via UPI App</button>
+
+    <p style="margin-top:12px; font-size:13px;">
+        <a href="#" onclick="openWhatsApp()" style="color:#fff;text-decoration:none;">
+            Having a problem with payment?
+        </a>
+    </p>
+</div>
+
+<!-- HOW TO PURCHASE -->
+<div class="card">
+    <h3>✨ How to Purchase ✨</h3>
+    <p>1. Select your desired product</p>
+    <p>2. Tap on Buy Now</p>
+    <p>3. Complete payment via QR Scan</p>
+    <p>4. Capture the payment screenshot</p>
+    <p>5. Send screenshot with product name</p>
+    <p>6. Our agent will contact you shortly</p>
+
+    <button class="red-btn" onclick="openWhatsApp()">📦 Send Screenshot</button>
+</div>
+
+<script>
+function payUPI(){
+    window.location.href =
+    "upi://pay?pa=YOURUPIID@upi&pn=AkaalGlobal&cu=INR";
+}
+
+function openWhatsApp(){
+    window.open(
+    "https://wa.me/919057578663?text=Having%20a%20problem%20to%20pay??",
+    "_blank"
+    );
+}
+</script>
+
+</body>
+  </html>
