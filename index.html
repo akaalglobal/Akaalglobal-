@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akaal Global</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#000;
+  color:#fff;
+  font-family:Arial,sans-serif;
+}
+
+/* ================= TOP BAR ================= */
+.top-bar{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:56px;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 14px;
+  z-index:10000;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.top-bar span{font-size:22px;cursor:pointer}
+
+/* ================= SIDE MENU ================= */
+.side-menu{
+  position:fixed;
+  top:0;left:-260px;
+  width:240px;height:100%;
+  background:#0b0b0b;
+  padding-top:70px;
+  transition:.3s;
+  z-index:10002;
+}
+.side-menu a{
+  display:block;
+  padding:14px 20px;
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.side-menu a:hover{background:#b11212}
+.side-menu.active{left:0}
+
+/* ================= IG SLIDER ================= */
+.ig-announcement-bar{
+  margin-top:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#000;
+  height:76px;
+  max-width:92%;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:40px;
+  padding:0 14px;
+}
+.ig-arrow{
+  width:36px;height:36px;border-radius:50%;
+  background:#111;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+}
+.ig-text-wrapper{flex:1;text-align:center}
+.ig-text{font-weight:600;letter-spacing:1.5px}
+
+/* ================= HERO ================= */
+.hero img{
+  width:100%;
+  display:block;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+/* ================= DISCOVER ================= */
+.discover{
+  padding:60px 20px;
+  text-align:center;
+}
+.discover h2{font-size:32px;margin-bottom:8px}
+.discover p{color:#cfcfcf;margin-bottom:22px;font-size:14px}
+.discover a{
+  background:#fff;
+  color:#000;
+  padding:12px 32px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+.discover a:hover{background:#b11212;color:#fff}
+
+/* ================= CATEGORIES ================= */
+.title{
+  text-align:center;
+  font-size:26px;
+  margin:20px 0;
+  font-family:"Old English Text MT",serif;
+}
+.items-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  padding:15px;
+  max-width:500px;
+  margin:auto;
+}
+.item{
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+}
+.circle{
+  width:120px;height:120px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#111;
+  margin:auto;
+}
+.circle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.item p{margin-top:8px;font-size:14px;color:#dadaff}
+
+/* ================= CARD ================= */
+.card{
+  max-width:420px;
+  margin:22px auto;
+  background:linear-gradient(145deg,#0b0b0b,#151515);
+  border-radius:18px;
+  padding:20px;
+}
+.card h3{text-align:center;margin-bottom:14px}
+
+/* CENTER LIST FIX */
+.card ol{
+  list-style-position:inside;
+  padding-left:0;
+  text-align:center;
+  font-size:14px;
+  line-height:1.7;
+}
+.card li{margin-bottom:6px}
+
+/* ================= PAYMENT ================= */
+.qr-box{text-align:center;margin:16px 0}
+.qr-box img{max-width:220px;width:100%}
+.pay-btn{
+  display:block;
+  background:linear-gradient(135deg,#b11212,#6f0a0a);
+  color:#fff;
+  padding:13px;
+  border-radius:32px;
+  text-decoration:none;
+  font-weight:bold;
+  text-align:center;
+  margin-top:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <span onclick="toggleMenu()">☰</span>
+  <span onclick="location.href='products.html'">🛒</span>
+</div>
+
+<div class="side-menu" id="sideMenu">
+  <a href="index.html">Home</a>
+  <a href="products.html">All Products</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="ig-announcement-bar">
+  <div class="ig-arrow" onclick="prevText()">&#8249;</div>
+  <div class="ig-text-wrapper">
+    <div class="ig-text" id="igText">Welcome to Akaal Store</div>
+  </div>
+  <div class="ig-arrow" onclick="nextText()">&#8250;</div>
+</div>
+
+<!-- HERO CLICKABLE -->
+<div class="hero">
+  <a href="products.html">
+    <img src="https://i.ibb.co/7NvC6KrJ/20251201230915.webp">
+  </a>
+</div>
+
+<section class="discover">
+  <h2>Discover More Products</h2>
+  <p>Explore Akaalglobal premium collection</p>
+  <a href="products.html">Shop Now</a>
+</section>
+
+<!-- CATEGORIES -->
+<div class="title">Categories</div>
+<div class="items-grid">
+  <a href="all-products.html?category=trending" class="item">
+    <div class="circle"><img src="https://i.imgur.com/8Km9tLL.jpg"></div>
+    <p>Trending</p>
+  </a>
+  <a href="https://akaalmart.odoo.com/shop/category/clothes-1" class="item">
+    <div class="circle"><img src="https://i.ibb.co/2YYLkL1N/file.png"></div>
+    <p>Clothes</p>
+  </a>
+  <a href="#" class="item">
+    <div class="circle"><img src="https://i.imgur.com/9z4Fz8E.jpg"></div>
+    <p>Electronics</p>
+  </a>
+  <a href="#" class="item">
+    <div class="circle"><img src="https://i.imgur.com/4ZQZ4Zy.jpg"></div>
+    <p>Sikhism</p>
+  </a>
+</div>
+
+<!-- HOW TO PURCHASE -->
+<div class="card">
+  <h3>✦ How to Purchase ✦</h3>
+  <ol>
+    <li>Select product</li>
+    <li>Tap Buy Now</li>
+    <li>Scan QR</li>
+    <li>Send screenshot</li>
+  </ol>
+  <a class="pay-btn" href="https://wa.me/919057578663">Send Screenshot</a>
+</div>
+
+<!-- PAYMENT -->
+<div class="card">
+  <h3>✦ Payment Receive ✦</h3>
+  <div class="qr-box">
+    <img src="https://i.ibb.co/Jjw2JT0j/In-Shot-20251224-123559815.jpg">
+  </div>
+  <a class="pay-btn" href="upi://pay?pa=9057578663@ybl&pn=AkaalGlobal&cu=INR">
+    Pay via UPI
+  </a>
+</div>
+
+<script>
+function toggleMenu(){
+ document.getElementById("sideMenu").classList.toggle("active");
+}
+
+const texts=["Welcome to Akaal Store","Follow us on Instagram","@akaalglobal"];
+let i=0;
+const igText=document.getElementById("igText");
+
+function nextText(){i=(i+1)%texts.length;igText.innerText=texts[i]}
+function prevText(){i=(i-1+texts.length)%texts.length;igText.innerText=texts[i]}
+
+setInterval(nextText,4000);
+</script>
+
+</body>
+</html>
